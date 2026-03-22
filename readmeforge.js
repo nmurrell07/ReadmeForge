@@ -846,7 +846,7 @@
 
   // ── Back to top button functionality ───────────────────────────────
   function initBackToTop() {
-    var backToTopBtn = document.getElementById("backToTopBtn");
+    var backToTopBtn = document.getElementById("backToTop");
     if (!backToTopBtn) return;
 
     // Remove existing event listeners by cloning the element
@@ -1103,6 +1103,17 @@
     toast("✓ README.md downloaded!");
   }
   window.downloadMd = downloadMd;
+
+  function scrollToTop() {
+    var previewBody = document.getElementById("previewBody");
+    if (previewBody) {
+      previewBody.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }
+  window.scrollToTop = scrollToTop;
 
   function resetAll() {
     document
