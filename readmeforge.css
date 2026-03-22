@@ -997,7 +997,7 @@ select option {
 
 /* Back to top button */
 .back-to-top {
-  position: sticky;
+  position: absolute;
   bottom: 20px;
   right: 20px;
   width: 44px;
