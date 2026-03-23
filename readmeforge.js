@@ -1159,5 +1159,36 @@
     if (el) el.value = val;
   }
 
+  // Back to top button functionality
+  function scrollToTop() {
+    var previewBody = document.getElementById("previewBody");
+    if (previewBody) {
+      previewBody.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }
+
+  // Show/hide back to top button based on scroll position
+  function updateBackToTopButton() {
+    var backToTopBtn = document.getElementById("backToTop");
+    var previewBody = document.getElementById("previewBody");
+    if (backToTopBtn && previewBody) {
+      var scrollPosition = previewBody.scrollTop;
+      if (scrollPosition > 300) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    }
+  }
+
+  // Add scroll event listener to preview body
+  var previewBody = document.getElementById("previewBody");
+  if (previewBody) {
+    previewBody.addEventListener("scroll", updateBackToTopButton);
+  }
+
   init();
 })();
